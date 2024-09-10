@@ -1,0 +1,62 @@
+-- To create database
+Create Database  EmployeeManagementDB;
+
+-- To select database
+Use EmployeeManagementDB;
+
+-- To create table
+CREATE TABLE Person
+(
+     id INT PRIMARY KEY auto_increment,
+     first_name VARCHAR(255) NOT NULL,
+     last_name VARCHAR(255) NOT NULL
+ );
+DESC Person;
+SELECT * FROM Person;
+
+INSERT INTO Person(first_name,last_name)
+VALUES('Rahul','Dravid');
+INSERT INTO Person(first_name,last_name)
+VALUES('Rohit','Sharma');
+INSERT INTO Person(first_name,last_name)
+VALUES('Virat','Kohli');
+INSERT INTO Person(first_name,last_name)
+VALUES('SuryaKumar','Yadav');
+
+-- to query Virat Kohli by id
+SELECT * FROM Person WHERE id=3;
+
+-- to query Rohit Sharma by name
+SELECT * FROM Person WHERE first_name = 'Rohit';
+
+-- to query all the person;
+SELECT id,first_name,last_name FROM Person;
+
+INSERT INTO Person(first_name,last_name)
+VALUES('Maheswaran','G');
+
+-- to update Maheswaran last_name as Govindaraju
+UPDATE Person
+SET last_name  = 'Govindaraju';
+WHERE id=6;
+
+CREATE TABLE departments
+(
+    id INT PRIMARY KEY auto_increment,
+    name VARCHAR(100) NOT NULL
+    );
+DESC departments;
+SELECT * FROM departments;
+INSERT INTO departments(name)
+VALUES('Analysis'),('Design'),('Development'),('Testing')
+
+-- Drop the database "EmployeeManagementDB"
+    -- Drop the table
+        -- Person
+            --
+            DROP TABLE Person;
+            
+            SELECT * FROM departments;
+            TRUNCATE TABLE departments;
+            
+            DROP DATABASE if exists employeemanagementdb;
